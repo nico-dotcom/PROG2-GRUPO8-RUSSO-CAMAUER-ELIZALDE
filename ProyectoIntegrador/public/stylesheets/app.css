@@ -452,6 +452,21 @@ textarea.form-input {
   resize: vertical;
   padding: 15px;
 }
+.FormularioAgregarProducto{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.CampoForm{
+  padding: 10px;
+}
+.LabelForm{
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
 /*====== Profile ======*/
 .info-usuario{
