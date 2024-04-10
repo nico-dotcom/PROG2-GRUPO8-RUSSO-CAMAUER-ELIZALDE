@@ -60,7 +60,35 @@ INSERT INTO usuarios (id_usuario, email, contrasenas, fecha, DNI,foto,createdAt,
 VALUES 			(DEFAULT, "sofi@udesa.edu.ar", "sofiLaMasLinda24", "2004-04-10", 41929222, "perfilbcamauer.png", DEFAULT,DEFAULT,DEFAULT);
 
 
+INSERT INTO productos (id_producto, id_usuario, imagenProducto, nombreProducto, descripcion,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, 1 , "/imagenes/products/default-image.png" , "Producto 1", "Descripción del producto 1" , DEFAULT, DEFAULT,DEFAULT);
 
+INSERT INTO productos (id_producto, id_usuario, imagenProducto, nombreProducto, descripcion,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, 1, "/imagenes/products/default-image.png" , "Producto 2", "Descripción del producto 2" , DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO productos (id_producto, id_usuario, imagenProducto, nombreProducto, descripcion,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, 2 , "/imagenes/products/default-image.png" , "Producto 3", "Descripción del producto 3" , DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO productos (id_producto, id_usuario, imagenProducto, nombreProducto, descripcion,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, 2 , "/imagenes/products/default-image.png" , "Producto 4", "Descripción del producto 4" , DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO productos (id_producto, id_usuario, imagenProducto, nombreProducto, descripcion,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, 3 , "/imagenes/products/default-image.png" , "Producto 5", "Descripción del producto 5" , DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO productos (id_producto, id_usuario, imagenProducto, nombreProducto, descripcion,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, 3 , "/imagenes/products/default-image.png" , "Producto 6", "Descripción del producto 6" , DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO productos (id_producto, id_usuario, imagenProducto, nombreProducto, descripcion,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, 5 , "/imagenes/products/default-image.png" , "Producto 7", "Descripción del producto 7" , DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO productos (id_producto, id_usuario, imagenProducto, nombreProducto, descripcion,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, 5 , "/imagenes/products/default-image.png" , "Producto 8", "Descripción del producto 8" , DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO productos (id_producto, id_usuario, imagenProducto, nombreProducto, descripcion,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, 4 , "/imagenes/products/default-image.png" , "Producto 9", "Descripción del producto 9" , DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO productos (id_producto, id_usuario, imagenProducto, nombreProducto, descripcion,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, 4 , "/imagenes/products/default-image.png" , "Producto 10", "Descripción del producto 10" , DEFAULT, DEFAULT,DEFAULT);
 
 /*Producto 1 comentarios */
 INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
