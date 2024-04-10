@@ -249,3 +249,4 @@ let datosApp = {
 
   };
   
+  module.exports = datosApp;
