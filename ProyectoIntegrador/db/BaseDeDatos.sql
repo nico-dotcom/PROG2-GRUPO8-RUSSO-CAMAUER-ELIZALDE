@@ -62,5 +62,113 @@ VALUES 			(DEFAULT, "sofi@udesa.edu.ar", "sofiLaMasLinda24", "2004-04-10", 41929
 
 
 
+/*Producto 1 comentarios */
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 1 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
 
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 1, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 1, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+/*Producto 2 comentarios */
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 1 , 2 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 1, 2 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 1 , 2 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+/*Producto 3 comentarios */
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 2 , 3, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 2, 3, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 2, 3, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+/*Producto 4 comentarios */
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 4 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 4, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 4, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+/*Producto 5 comentarios */
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 5 , 5, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 5, 5, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 5 , 5, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+
+/*Producto 6 comentarios */
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 1 , 6, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 1 , 6 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 1 , 6 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+/*Producto 7 comentarios */
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 2 , 7, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 2 , 7 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 2 , 7, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+/*Producto 8 comentarios */
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 8, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 8, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 8, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+/*Producto 9 comentarios */
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 3 , 9, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 3 , 9 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 3 , 9 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+/*Producto 10 comentarios */
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 10 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 10 , "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
+
+INSERT INTO comentarios (id_comentario, id_usuario, id_producto, comentario, createdAt, updatedAt, deletedAt)
+VALUES 					(DEFAULT, 4 , 10, "¡Me encanta este producto!", DEFAULT, DEFAULT,DEFAULT);
 
