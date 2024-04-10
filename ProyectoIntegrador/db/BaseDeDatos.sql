@@ -1,0 +1,4 @@
+CREATE SCHEMA Prog2;
+
+USE Prog2;
+
