@@ -44,6 +44,21 @@ CREATE TABLE comentarios (
 );
 
 
+INSERT INTO usuarios (id_usuario, email, contrasenas, fecha, DNI,foto,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, "velizalde@udesa.edu.ar", "VickyLaMasLinda24", "2004-10-01", 46213843, "perfilvelizalde.png", DEFAULT,DEFAULT,DEFAULT);
+
+INSERT INTO usuarios (id_usuario, email, contrasenas, fecha, DNI,foto,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, "nicolasrusso@udesa.edu.ar", "NicoLaMasLinda24", "2004-02-10", 45421961, "perfilnicolasrusso.png", DEFAULT,DEFAULT,DEFAULT);
+
+INSERT INTO usuarios (id_usuario, email, contrasenas, fecha, DNI, foto,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, "bcamauer@udesa.edu.ar", "BerniLaMasLinda24", "2004-05-03", 46649858, "perfilbcamauer.png", DEFAULT,DEFAULT,DEFAULT);
+
+INSERT INTO usuarios (id_usuario, email, contrasenas, fecha, DNI, foto,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, "tefa@udesa.edu.ar", "tefaLaMasLinda24", "2004-05-06", 42219122, "perfiltefa.png", DEFAULT,DEFAULT,DEFAULT);
+
+INSERT INTO usuarios (id_usuario, email, contrasenas, fecha, DNI,foto,createdAt,updatedAt,deletedAt)
+VALUES 			(DEFAULT, "sofi@udesa.edu.ar", "sofiLaMasLinda24", "2004-04-10", 41929222, "perfilbcamauer.png", DEFAULT,DEFAULT,DEFAULT);
+
 
 
 
