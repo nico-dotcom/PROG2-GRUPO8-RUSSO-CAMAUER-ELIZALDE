@@ -24,6 +24,8 @@ CREATE TABLE productos (
     updatedAt 			TIMESTAMP 			DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deletedAt 			TIMESTAMP 			DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     
+    FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario)
+
     
 );
 
@@ -35,8 +37,13 @@ CREATE TABLE comentarios (
     createdAt 			TIMESTAMP 			DEFAULT CURRENT_TIMESTAMP,
     updatedAt 			TIMESTAMP 			DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deletedAt 			TIMESTAMP 			DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   
+    FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario),
+	FOREIGN KEY(id_producto) REFERENCES productos(id_producto)
     
 );
+
+
 
 
 
