@@ -27,3 +27,18 @@ CREATE TABLE productos (
     
 );
 
+CREATE TABLE comentarios (
+	id_comentario		INT 				UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    id_usuario 			INT					UNSIGNED,
+	id_producto			INT					UNSIGNED,
+    comentario 		  	VARCHAR(350)		NOT NULL, 
+    createdAt 			TIMESTAMP 			DEFAULT CURRENT_TIMESTAMP,
+    updatedAt 			TIMESTAMP 			DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deletedAt 			TIMESTAMP 			DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    
+);
+
+
+
+
+
