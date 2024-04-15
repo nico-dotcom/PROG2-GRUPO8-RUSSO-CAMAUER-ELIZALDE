@@ -1,15 +1,11 @@
 var express = require('express');
+const userController = require('../controllers/userController');
 var router = express.Router();
 
-/* GET users profile. */
-router.get('/profile', function(req, res, next) {
-  res.render('profile');
-});
+router.get('/profile', userController.profile);
 
-/* GET users profile edit. */
-router.get('/profile-edit', function(req, res, next) {
-  res.render('profile-edit');
-});
+router.get('/profile-edit', userController.profileEdit);
+
 
 /* GET headerLogueado */
 router.get('/headerLogueado', function(req, res, next) {

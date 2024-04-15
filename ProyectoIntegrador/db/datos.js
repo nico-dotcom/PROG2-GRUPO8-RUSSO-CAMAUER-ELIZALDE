@@ -5,7 +5,7 @@ let datosApp = {
     contraseña: "12345678",
     fechaNacimiento: "1990-01-01",
     nroDocumento: 12345678,
-    fotoPerfil: "/imagenes/perfiles/usuario123.jpg",
+    fotoPerfil: "/images/users/profile.png",
   },
 
   productos: [
@@ -15,20 +15,20 @@ let datosApp = {
           descripcion: "Caja manual de 6 velocidades, Control de estabilidad (VSC) y tracción (TRC), Pack eléctrico",
           comentarios: [
             {
-              nombreUsuario: "Usuario Ejemplo",
-              texto: "¡Me encanta este producto!",
-              imagenPerfil: "/imagenes/perfiles/ejemploPerfil1.jpg"
+              nombreUsuario: "Bernarda Camauer",
+              texto: "¡A mi papa le gusto este auto!",
+              imagenPerfil: "/images/users/comentario.jpg"
             },
             {
-              nombreUsuario: "Usuario Ejemplo",
-              texto: "¡Me fascina este producto!",
-              imagenPerfil: "/imagenes/perfiles/ejemploPerfil1.jpg"
+              nombreUsuario: "Victoria Elizalde",
+              texto: "¡Me encanta para ir a 50 por avenida libertador!",
+              imagenPerfil: "/images/users/comentario.jpg"
             },
 
             {
-              nombreUsuario: "Usuario Ejemplo",
-              texto: "¡Me divierte este producto!",
-              imagenPerfil: "/imagenes/perfiles/ejemploPerfil1.jpg"
+              nombreUsuario: "Nicolas Russo",
+              texto: "¡Es re rapido este auto!",
+              imagenPerfil: "/images/users/comentario.jpg"
             }
           ]},
 
