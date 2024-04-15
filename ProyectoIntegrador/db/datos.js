@@ -10,7 +10,7 @@ let datosApp = {
 
     productos: [
         {
-            imagen: "/imagenes/products/default-image.png",
+            imagen: "/images/products/default-image.png",
             nombre: "Producto 1",
             descripcion: "Descripción del producto 1.",
             comentarios: [
@@ -169,6 +169,11 @@ let datosApp = {
               nombreUsuario: "Usuario Ejemplo",
               texto: "¡Me divierte este producto!",
               imagenPerfil: "/imagenes/perfiles/ejemploPerfil1.jpg"
+            },
+            {
+              nombreUsuario: "Usuario Ejemplo",
+              texto: "¡Me fascina este producto!",
+              imagenPerfil: "/imagenes/perfiles/ejemploPerfil1.jpg"
             }
           ]
       },
@@ -188,6 +193,11 @@ let datosApp = {
               imagenPerfil: "/imagenes/perfiles/ejemploPerfil1.jpg"
             },
 
+            {
+              nombreUsuario: "Usuario Ejemplo",
+              texto: "¡Me divierte este producto!",
+              imagenPerfil: "/imagenes/perfiles/ejemploPerfil1.jpg"
+            },
             {
               nombreUsuario: "Usuario Ejemplo",
               texto: "¡Me divierte este producto!",
@@ -215,6 +225,11 @@ let datosApp = {
               nombreUsuario: "Usuario Ejemplo",
               texto: "¡Me divierte este producto!",
               imagenPerfil: "/imagenes/perfiles/ejemploPerfil1.jpg"
+            },
+            {
+              nombreUsuario: "Usuario Ejemplo",
+              texto: "¡Me divierte este producto!",
+              imagenPerfil: "/imagenes/perfiles/ejemploPerfil1.jpg"
             }
           ]
       },
@@ -234,6 +249,11 @@ let datosApp = {
               imagenPerfil: "/imagenes/perfiles/ejemploPerfil1.jpg"
             },
 
+            {
+              nombreUsuario: "Usuario Ejemplo",
+              texto: "¡Me divierte este producto!",
+              imagenPerfil: "/imagenes/perfiles/ejemploPerfil1.jpg"
+            },
             {
               nombreUsuario: "Usuario Ejemplo",
               texto: "¡Me divierte este producto!",
