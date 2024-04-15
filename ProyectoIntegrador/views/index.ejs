@@ -34,7 +34,7 @@
 			<% for (let i = 0; i < lista.length; i++) { %>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/product">
+					<a href="/info">
 						<figure class="product-box_image">
 							<img src= <%= lista[i].imagen %> alt="cafetera moulinex">
 						</figure>
@@ -60,9 +60,9 @@
 			<% for (let i = 6; i < lista.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/product">
+						<a href="/info">
 							<figure class="product-box_image">
-								<img src = <%= lista[i].imagen %> alt="cafetera moulinex">
+								<img src = <%= lista[i].imagen %> >
 							</figure>
 							<article class="product-box_data">
 								<h2><%= lista[i].nombre%></h2>

@@ -12,7 +12,10 @@ const productosController = {
     },
     productInfo: function (req,res) {
         return res.render('product', {lista: productos} )
-    }
+    },
+    search: function(req, res, next) {
+        res.render('search-results');
+      }
 
 
 

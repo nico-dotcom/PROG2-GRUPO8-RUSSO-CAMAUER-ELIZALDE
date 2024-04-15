@@ -12,17 +12,8 @@ router.get('/info', productosController.productInfo);
 
 
 
-/* GET product page. */
-router.get('/productI', function(req, res, next) {
-  res.render('product');
-});
-
-
-
 /* GET search result. */
-router.get('/search-result', function(req, res, next) {
-    res.render('search-results');
-  });
+router.get('/search', productosController.search);
 
 
 module.exports = router;
