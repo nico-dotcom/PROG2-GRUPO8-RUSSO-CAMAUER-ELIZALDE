@@ -268,10 +268,9 @@ let datosApp = {
     },
   
 
-
   ],
 
 
 };
 
-module.exports = datosApp;
+module.exports = datosApp; 
