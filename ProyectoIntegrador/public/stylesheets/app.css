@@ -17,6 +17,7 @@
 /*====== Basics ======*/
 * {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html,
@@ -67,6 +68,7 @@ hr {
 
 /*====== Main Header ======*/
 .main-header {
+  color: #e1e1e1 ;
   padding: 15px 0;
   background-color: var(--yellow);
 }
@@ -169,6 +171,7 @@ hr {
 }
 
 .products-title {
+  font-family:'Times New Roman', Times, serif;
   font-size: 2.4em;
   font-weight: 400;
   color: var(--gray);
@@ -309,11 +312,14 @@ hr {
   display: block;
   margin: auto;
 }
-
+h2{
+  font-family:'Times New Roman', Times, serif;
+}
 .product-detail-info {
   border-right: 1px solid var(--light-gray);
   padding: 15px;
   /* height: 100%; */
+
 }
 
 .product-detail-title {
