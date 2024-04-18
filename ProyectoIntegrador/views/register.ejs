@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/logo.jpg" />
-
-	<title> Mercado Liebre Argentina</title>
-	<!-- Font Awesome Stylesheet -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
-	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/app.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link width="" rel="shortcut icon" href="../images/logo.png" />
+    <title> Viaveloz</title>
+    <!-- Font Awesome Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- Bootstrap Grid Stylesheet -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
+    <!-- Own Stylesheet -->
+    <link rel="stylesheet" href="/stylesheets/app.css">
 </head>
 
 <body>
-	<!-- Header -->
-	<%- include('./partials/header')%>
-	<!-- /Header -->
+    <!-- Header -->
+    <%- include('./partials/header')%>
+    <!-- /Header -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Registrate</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			
-		<form class='formulario' action="/user/login"  method="GET">
-			<label class= 'LabelForm' id="contrasena">Email:</label>
-			<input class= 'CampoForm' type="email" name="mail" value="">
-
-			<label class= 'LabelForm' id="contrasena">Nombre usuario:</label>
-			<input class= 'CampoForm' type="text" name="usuario" value="">
-
-			<label class= 'LabelForm' id="contrasena">Contraseña:</label>
-			<input class= 'CampoForm' type="password" name="pass" value="">
-
-			<label class= 'LabelForm' id="contrasena">Fecha de nacimiento:</label>
-			<input class= 'CampoForm' type="date" name="nacimiento" value="">
-
-			<label class= 'LabelForm' id="contrasena">Número de documento:</label>
-			<input class= 'CampoForm' type="number" name="documento" value="">
-
-			<label class= 'LabelForm' id="contrasena">Foto de perfil:</label>
-			<input class= 'CampoForm' type="text" name="foto" value="">
-
-			<button class="button">Registrarme</button>
-		</form>
+    <!-- Novedades -->
+    <div class="container products-wrapper">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="products-title">Registrate</h2>
+            </div>
+            <!-- Show the "ultimos" products -->
+           
+        <form class='formulario' action="/user/login"  method="GET">
+            <label class= 'LabelForm'> Email:</label>
+            <input class= 'CampoForm' id="mailUsuario" type="email" name="mail" value="">
 
 
-	<!-- footer -->
-	<%- include('./partials/footer')%>
-	<!-- /footer -->
+            <label class= 'LabelForm'> Nombre usuario:</label>
+            <input class= 'CampoForm' id="usuarioUsuario" type="text" name="usuario" value="">
+
+
+            <label class= 'LabelForm'> Contraseña:</label>
+            <input class= 'CampoForm' id="contrasenaUsuario" type="password" name="pass" value="">
+
+
+            <label class= 'LabelForm'> Fecha de nacimiento:</label>
+            <input class= 'CampoForm' id="fechaUsuario" type="date" name="nacimiento" value="">
+
+
+            <label class= 'LabelForm'> Número de documento:</label>
+            <input class= 'CampoForm' id="documentoUsuario" type="number" name="documento" value="">
+
+
+            <label class= 'LabelForm'>Foto de perfil:</label>
+            <input class= 'CampoForm' id="fotoPerfilUsuario" type="text" name="foto" value="">
+
+            <button class="button">Registrarme</button>
+        </form>
+
+    <!-- footer -->
+    <%- include('./partials/footer')%>
+    <!-- /footer -->
+
 </body>
-
 </html>
