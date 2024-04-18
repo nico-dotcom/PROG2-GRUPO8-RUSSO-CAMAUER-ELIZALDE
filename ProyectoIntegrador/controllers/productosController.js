@@ -1,23 +1,23 @@
-const productos = require('../db/datos');
+const datos = require('../db/datos');
 
 const productosController = {
     index: function (req,res) {
-        return res.render('index', {lista: productos.productos} )
+        return res.render('index', {lista: datos.productos} )
     },
     product: function (req,res) {
-        return res.render('product', {lista: productos} )
+        return res.render('product', {lista: datos} )
     },
     productAdd: function (req,res) {
-        return res.render('product-add', {lista: productos} )
+        return res.render('product-add', {lista: datos} )
     },
+
     productInfo: function (req,res) {
-        return res.render('product', {lista: productos} )
+        return res.render('product', {lista: datos} )
     },
+
     search: function(req, res, next) {
-        res.render('search-results');
+        return res.render('product', {lista: datos} )
       }
-
-
 
 };
 module.exports= productosController;

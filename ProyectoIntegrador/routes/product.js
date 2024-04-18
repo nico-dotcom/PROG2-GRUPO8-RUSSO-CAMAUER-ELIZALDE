@@ -10,10 +10,9 @@ router.get('/add', productosController.productAdd);
 
 router.get('/info', productosController.productInfo);
 
-
-
-/* GET search result. */
 router.get('/search', productosController.search);
 
-
 module.exports = router;
+
+
+
