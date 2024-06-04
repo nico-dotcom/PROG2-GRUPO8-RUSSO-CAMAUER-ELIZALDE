@@ -6,17 +6,9 @@ router.get('/profile', userController.profile);
 
 router.get('/profile-edit', userController.profileEdit);
 
-router.get('/headerLogueado', function(req, res, next) {
-  res.render('headerLogueado');
-});
+router.get('/login', userController.login);
 
-router.get('/login', function(req, res, next) {
-  res.render('login');
-});
-
-router.get('/register', function(req, res, next) {
-  res.render('register');
-});
+router.get('/login', userController.register);
 
 module.exports = router;
 
