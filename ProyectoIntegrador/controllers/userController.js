@@ -15,7 +15,7 @@ const userController = {
 
     login: function (req,res) {
         if(req.session.user != undefined){
-            return res.render("index")
+            return res.redirect("/")
         }else{
             return res.render('login');
         }
