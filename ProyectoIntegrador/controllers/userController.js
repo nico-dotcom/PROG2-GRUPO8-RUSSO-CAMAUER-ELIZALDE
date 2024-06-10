@@ -13,8 +13,12 @@ const userController = {
         return res.render('profile-edit', { lista: user })
     },
 
-    login: function (req, res) {
-        return res.render('login')
+    login: function (req,res) {
+        if(req.session.user != undefined){
+            return res.render("index")
+        }else{
+            return res.render('login');
+        }
     },
 
     register: function (req, res) {
