@@ -7,12 +7,14 @@ module.exports = function (sequelize , dataTypes){
             type : dataTypes.INTEGER
         },
         nombre_usuario:{
-            type : dataTypes.STRING(250)
+            type : dataTypes.STRING()
         },
-   
+       
         email:{
             type : dataTypes.STRING(250)
         },
+      
+
         contrasenas:{
             type : dataTypes.STRING(250)
         },

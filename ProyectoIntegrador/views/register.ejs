@@ -27,18 +27,24 @@
             </div>
             <!-- Show the "ultimos" products -->
            
-        <form class='formulario' action="/user/login"  method="GET">
+        <form class='formulario' action="/user/register"  method="POST">
             <label class= 'LabelForm'> Email:</label>
             <input class= 'CampoForm' id="mailUsuario" type="email" name="mail" value="">
-
+            <% if (locals.errors && errors.mail) { %>
+             <p class="error"><%= errors.mail.msg %></p>
+            <% } %>
 
             <label class= 'LabelForm'> Nombre usuario:</label>
             <input class= 'CampoForm' id="usuarioUsuario" type="text" name="usuario" value="">
-
+            <% if (locals.errors && errors.usuario) { %>
+                <p class="error"><%= errors.usuario.msg %></p>
+               <% } %>
 
             <label class= 'LabelForm'> Contraseña:</label>
             <input class= 'CampoForm' id="contrasenaUsuario" type="password" name="pass" value="">
-
+            <% if (locals.errors && errors.pass) { %>
+                <p class="error"><%= errors.pass.msg %></p>
+               <% } %>
 
             <label class= 'LabelForm'> Fecha de nacimiento:</label>
             <input class= 'CampoForm' id="fechaUsuario" type="date" name="nacimiento" value="">
