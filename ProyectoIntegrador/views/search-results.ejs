@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
+
 <%- include('./partials/head') %>
 
 <body>
     <!-- Header -->
-    <%- include('./partials/headerLogueado')%>
+
+    <% if (locals.user != undefined) { %>
+        <%- include('./partials/headerLogueado') %>
+     <% } else { %>
+        <%- include('./partials/header') %>
+    <% } %>
     <!-- /Header -->
 
     <!-- Novedades -->
@@ -15,10 +21,24 @@
                 <h2 class="products-title">Resultados de búsqueda</h2>
             </div>
             <!-- Show the "ultimos" products -->
-            <h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-            Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-            ////////////////
-            </h2>
+
+            <% for (let i = 0; i < result.length; i++) { %>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <section class="product-box">
+                    <a href="product/info">
+                        <figure class="product-box_image">
+                            <img src= <%= result[i].imagen_producto %> alt="cafetera moulinex">
+                        </figure>
+                        <article class="product-box_data">
+                            <h2><%= result[i].nombre_producto%></h2>
+                            <p><%= result[i].descripcion %></p>
+                            <a href="user/profile/id/<%= result[i].id_usuario %>"> <p><%= result[i].Usuario.email%></p></a>
+                            <p>Comentarios: <%= result[i].Comentario.length %></p>
+                        </article>
+                    </a>
+                </section>
+            </div>
+            <%} %>
 
     <!-- footer -->
     <%- include('./partials/footer')%>

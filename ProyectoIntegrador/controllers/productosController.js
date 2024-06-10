@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const op = db.Sequelize.Op;
 
 const productosController = {
     index: function (req,res) {
@@ -49,8 +50,37 @@ productInfo: function (req,res) {
 })
 },
 
-search: function(req, res, next) {
-    return res.render('product', {lista: datos} )
+search: function(req, res) {
+    let qs= req.query.search;
+    let filtrado = {
+        where:{
+        [op.or]:
+            [
+                {nombre_producto: {[op.like]: `%${qs}%`}},
+                {descripcion: {[op.like]: `%${qs}%`}}
+        ]},
+        order: [
+            ['created_at', 'DESC']
+        ],
+        include: [
+            {association: "Usuario"},
+            {association: "Comentario"}
+        ]
+        
+    };
+    db.Producto.findAll(filtrado)
+    .then(function(result) {
+        if (result.length == 0) {
+            return res.send('No hay resultados para su criterio de búsqueda');
+
+        } else {
+            return res.render('search-results', {result: result});        }
+        
+
+    }).catch(function(error) {
+        return console.log(error);
+    })
+    
 }
 };
 
