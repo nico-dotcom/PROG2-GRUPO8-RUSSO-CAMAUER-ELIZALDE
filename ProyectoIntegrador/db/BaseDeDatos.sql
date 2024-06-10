@@ -6,6 +6,7 @@ USE Prog2;
 
 CREATE TABLE usuarios (
     id_usuario          INT                 UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nombre_usuario      VARCHAR(250)        NOT NULL,
     email               VARCHAR(250)        NOT NULL,
     contrasenas         VARCHAR(250)        NOT NULL,
     fecha               DATE                NOT NULL,
@@ -13,7 +14,7 @@ CREATE TABLE usuarios (
     foto                VARCHAR(250)        NOT NULL,
     created_at          TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
     updated_at          TIMESTAMP           DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deleted_at          TIMESTAMP           DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    deleted_at          TIMESTAMP           NULL
 );
 
 
@@ -25,7 +26,7 @@ CREATE TABLE productos (
     descripcion         VARCHAR(400)        NOT NULL,
     created_at          TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
     updated_at          TIMESTAMP           DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deleted_at          TIMESTAMP           DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at          TIMESTAMP           NULL,
    
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario)
    
@@ -39,7 +40,7 @@ CREATE TABLE comentarios (
     comentario          VARCHAR(350)        NOT NULL,
     created_at          TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
     updated_at          TIMESTAMP           DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    deleted_at          TIMESTAMP           DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at          TIMESTAMP           NULL,
    
     FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario),
     FOREIGN KEY(id_producto) REFERENCES productos(id_producto)
