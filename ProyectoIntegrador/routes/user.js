@@ -32,6 +32,8 @@ router.get('/profile-edit', userController.profileEdit);
 
 router.get('/login', userController.login);
 
+router.post('/login', userController.loginUser);
+
 /*muestra el formulario*/
 router.get('/register', userController.register);
 
