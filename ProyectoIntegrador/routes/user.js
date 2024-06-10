@@ -34,11 +34,14 @@ router.get('/login', userController.login);
 
 router.post('/login', userController.loginUser);
 
+router.post('/logout',  userController.logout);
+
 /*muestra el formulario*/
 router.get('/register', userController.register);
 
 /* procesa la informacion del formulario*/
 router.post('/register', validations, userController.store);
+
 
 module.exports = router;
 

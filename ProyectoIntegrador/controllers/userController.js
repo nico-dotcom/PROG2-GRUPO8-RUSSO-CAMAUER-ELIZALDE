@@ -89,7 +89,13 @@ const userController = {
         } else {
            return res.render('register', {errors: errors.mapped(), old: req.body})
             }
-        }
+        },
+
+    logout: function (req, res) {
+        req.session.destroy();
+        res.clearCookie("userId");
+        return res.redirect('/');
+    }
     }
 
 ;
