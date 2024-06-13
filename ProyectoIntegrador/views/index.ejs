@@ -20,25 +20,29 @@
     <div class="container products-wrapper">
         <div class="row">
             <div class="col-12">
+                
                 <h2 class="products-title">Novedades</h2>
             </div>
-   
+            <a href="/info">
             <% for (let i = 0; i < lista.length; i++) { %>
             <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
+                    
                     <a href="product/info">
                         <figure class="product-box_image">
-                            <img src= <%= lista[i].imagen %> alt="cafetera moulinex">
+                            <img src= <%= lista[i].imagen_producto %> alt="cafetera moulinex">
                         </figure>
                         <article class="product-box_data">
-                            <h2><%= lista[i].nombre%></h2>
+                            <h2><a href="/profile"><%= lista[i].Usuario.email%></h2></a>
                             <p><%= lista[i].descripcion %></p>
-                            <p>Comentarios: <%= lista[i].comentarios.length %></p>
+                            
+                            <p>Comentarios: <%= lista[i].Comentario%></p>
                         </article>
                     </a>
                 </section>
             </div>
             <%} %>
+        </a>
         </div>
     </div>
 
@@ -59,9 +63,9 @@
                                 <img src = <%= lista[i].imagen %> >
                             </figure>
                             <article class="product-box_data">
-                                <h2><%= lista[i].nombre%></h2>
+                                <h2><%= lista[i].Usuario.email%></h2>
                                 <p><%= lista[i].descripcion %></p>
-                                <p>Comentarios: <%= lista[i].comentarios.length %></p>
+                                <p>Comentarios: <%= lista[i].comentarios %></p>
                             </article>
                         </a>
                     </section>

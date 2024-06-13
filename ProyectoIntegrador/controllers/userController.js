@@ -5,7 +5,8 @@ const { validationResult } = require('express-validator');
 
 const userController = {
     profile: function (req, res) {
-        return res.render('profile', { lista: user })
+        
+        return res.send('profile', { lista: user })
     
     },
 

@@ -21,11 +21,9 @@ let validations = [
         .notEmpty().withMessage('Debe ingresar un nombre de usuario').bail(),
     body('pass')
         .notEmpty().withMessage('Debe ingresar una contraseña').bail()
-        .isLength({ min: 4 }).withMessage('El nombre debe ser mas largo'),
-
+        .isLength({ min: 4 }).withMessage('La contraseña debe ser mas larga'),
 
 ];
-
 router.get('/profile', userController.profile);
 
 router.get('/profile-edit', userController.profileEdit);
