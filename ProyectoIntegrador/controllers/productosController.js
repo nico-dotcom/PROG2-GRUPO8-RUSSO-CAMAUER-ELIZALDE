@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const op = db.Sequelize.Op;
+const { validationResult } = require('express-validator');
 
 const productosController = {
     index: function (req,res) {
@@ -25,10 +26,44 @@ product: function (req,res) {
     return res.render('product', {lista: datos} )
 },
 
-productAdd: function (req,res) {
-
-    return res.render('product-add', {lista: datos} )
+showFormAdd: function (req,res) {
+    if(req.session.user != undefined){
+        return res.render("product-add")
+    }else{
+        return res.render('login');
+        }
+    
     },
+
+store: function (req, res) {
+    let errorrs= validationResult(req);
+    const userId = res.locals.user.id_usuario;
+    
+    if (errorrs.isEmpty()) {
+        let infoForm = req.body;
+        let nuevoProducto= {
+            id_usuario: userId,
+            imagen_producto: '/images/products/' + infoForm.imagen_producto,
+            nombre_producto: infoForm.nombre_producto,
+            descripcion: infoForm.descripcion,
+
+        }
+    
+        db.Producto.create(nuevoProducto)
+        .then((result) => {
+            return res.redirect('/')
+
+        }).catch((error) => {
+            return console.log(error);
+        });
+    }else{
+        return res.render('product-add.ejs', {
+            errors: errorrs.mapped(),
+            old: req.body
+        });
+    };
+    
+},
 
 productInfo: function (req,res) {
 
