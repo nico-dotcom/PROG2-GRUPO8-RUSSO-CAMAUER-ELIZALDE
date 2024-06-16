@@ -24,7 +24,7 @@ let validations = [
         .isLength({ min: 4 }).withMessage('La contraseña debe ser mas larga'),
 
 ];
-router.get('/profile', userController.profile);
+router.get('/profile/id/:id', userController.profile);
 
 router.get('/profile-edit', userController.profileEdit);
 

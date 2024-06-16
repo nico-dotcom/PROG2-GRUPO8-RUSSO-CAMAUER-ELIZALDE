@@ -7,17 +7,18 @@
 	
     <!-- Header -->
     <%- include('./partials/headerLogueado')%>
+    
     <!-- /Header -->
 
     <!-- Datos del usuario -->
     <section class="info-usuario container products-wrapper">
         <div class="row">
             <div class="img-container offset-3 col-2">
-                <img src=<%= lista.usuario.fotoPerfil%>  alt="foto de perfil" class="foto-perfil">
-            </div>
+                <img src = <%= lista.foto %> >
+                        </div>
             <div class="data-container col-6">
                 <div class="d-flex align-items-center ">
-                    <h1 class="main-title"><%= lista.usuario.usuario%>
+                    <h1 class="main-title"><%= lista.nombre_usuario%>
                         <a href="/user/profile-edit">
                             <i class="fas fa-cog"></i>
                         </a>
@@ -26,40 +27,42 @@
                 </div>
                 <div>
                     <ul class="">
-                        <li><%= lista.usuario.email%> </li>
-                        <li>8 productos</li>
+                        <li><%= lista.email %> </li>
+                        <li><%= lista.Producto.length %></li>
                         <li>200 seguidores</li>
-                        <li>300 comentarios</li>
+                        <li><%= lista.Comentario.length %></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
     <!-- /Datos del usuario -->
+    
 
 <!-- Más comentados -->
 <div class="container products-wrapper">
     <div class="row">
         <div class="col-12">
-            <h2 class="products-title">Mis productos</h2>
+            <h2 class="products-title">Productos de este usuario</h2>
         </div>
         <!-- Show the "ultimos" products -->
-        <% for (let i = 0; i < lista.productos.length; i++) { %>
+        <% for (let i = 0; i < lista.Producto.length; i++) { %>
             <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
-                    <a href="/">
+                    <a href="/id/<%= lista.Producto[i].id_producto %>">
                         <figure class="product-box_image">
-                            <img src = <%= lista.productos[i].imagen %> alt="cafetera moulinex">
+                            <img src= <%= lista.Producto[i].imagen_producto %> alt="cafetera moulinex">
                         </figure>
                         <article class="product-box_data">
-                            <h2><%= lista.productos[i].nombre%></h2>
-                            <p><%= lista.productos[i].descripcion %></p>
-                            <p>Comentarios: <%= lista.productos[i].comentarios.length %></p>
+                            <h2><%= lista.Producto[i].nombre_producto%></h2>
+                            <p><%= lista.Producto[i].descripcion %></p>
+                            <p>Comentarios: <%= lista.Producto[i].Comentario.length %></p>
+
                         </article>
                     </a>
                 </section>
             </div>
-            <%} %>
+            <%} %>
    
 <!-- /Más comentados -->
 

@@ -5,9 +5,31 @@ const { validationResult } = require('express-validator');
 
 const userController = {
     profile: function (req, res) {
-        
-        return res.send('profile', { lista: user })
-    
+
+        let id = req.params.id
+        console.log("ID:", id);
+        db.Usuario.findByPk(id, {
+            include: [
+                {
+                    association: "Comentario",
+                },
+                {
+                    association: "Producto", 
+                    include: [{association: "Comentario"}]
+
+                } 
+                   
+
+            ], 
+            order:[[{model: db.Producto}, 'created_at', 'DESC']]
+        })
+
+            .then(function (resultado) {
+                return res.render("profile", { lista: resultado })
+
+            }).catch(function (errores) {
+                return console.log(errores);;
+            })
     },
 
     profileEdit: function (req, res) {
@@ -74,7 +96,7 @@ const userController = {
                 contrasenas: bcrypt.hashSync(form.pass, 10),
                 fecha: form.nacimiento,
                 dni: form.documento,
-                foto: form.foto
+                foto: "/images/users/" + form.foto
 
             };
             db.Usuario.create(user)
