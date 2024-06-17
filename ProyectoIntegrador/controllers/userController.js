@@ -102,7 +102,7 @@ const userController = {
             db.Usuario.create(user)
 
                 .then(function (result) {
-                    return res.redirect('/user/profile');
+                    return res.redirect('/user/login');
                 })
                 .catch(function (error) {
                     return console.log(error);
