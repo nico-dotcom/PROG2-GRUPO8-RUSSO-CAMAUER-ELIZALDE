@@ -31,6 +31,13 @@ router.get('/info', productosController.product);
 
 router.get('/search', productosController.search);
 
+router.get('/id/:id', productosController.productInfo);
+
+router.post('/delete/:id', productosController.delete);
+
+
+
+
 module.exports = router;
 
 
