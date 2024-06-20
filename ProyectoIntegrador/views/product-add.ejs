@@ -22,7 +22,7 @@
             <!-- Show the "ultimos" products -->
             <form class='formulario' action="/product/add" method="POST">
                
-                <input class= 'CampoForm' type="file" id="ImagenProductoAgregado" accept=".jpg, .jpeg, .png" name="imagen_producto" >
+                <input class= 'CampoForm' type="text" id="ImagenProductoAgregado" accept=".jpg, .jpeg, .png" name="imagen_producto" >
                 <% if (locals.errors && errors.imagen_producto) { %>
                     <p class="error"><%= errors.imagen_producto.msg %></p>
                 <% } %>
