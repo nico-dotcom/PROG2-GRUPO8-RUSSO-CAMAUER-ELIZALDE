@@ -54,7 +54,8 @@ const userController = {
         return res.redirect('/user/login');
     }
 
-    },profileUpdate:function (req, res) {
+    },
+    profileUpdate:function (req, res) {
         let form = req.body;
         let idUsuario = res.locals.user.id_usuario;
         let contrasenaSession = res.locals.user.contrasena;
@@ -115,7 +116,13 @@ const userController = {
     },
 
     register: function (req, res) {
+        if (req.session.user != undefined) {
+            return res.redirect('/');
+        } else {
         res.render('register')
+
+            
+        }
     },
 
     loginUser: (req, res) => {
