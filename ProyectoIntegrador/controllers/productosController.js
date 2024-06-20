@@ -57,7 +57,6 @@ const productosController = {
                             { association: 'Producto' }
                         ],
 
-                        order: [['created_at', 'DESC']]
                     }
                 ]
             })
@@ -128,7 +127,8 @@ const productosController = {
                         { association: 'Producto' }
                     ]
                 }
-            ]
+            ],
+            order: [[{model: db.Comentario}, 'created_at', 'DESC']]
         })
             .then(function (resultado) {
                 return res.render('product', { lista: resultado, session: session });
