@@ -32,7 +32,7 @@
                         <article class="product-box_data">
                             <h2><%= result[i].nombre_producto%></h2>
                             <p><%= result[i].descripcion %></p>
-                            <a href="/user/profile/id/<%= result[i].id_usuario %>"> <p><%= result[i].Usuario.email%></p></a>
+                            <a href="/user/profile/id/<%= result[i].id_usuario %>"> <p>Creado por <%= result[i].Usuario.nombre_usuario %></p></a>
                             <p>Comentarios: <%= result[i].Comentario.length %></p>
                         </article>
                     </a>

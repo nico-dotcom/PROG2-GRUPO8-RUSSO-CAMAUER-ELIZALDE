@@ -1,7 +1,6 @@
-const datos = require('../db/datos');
 const db = require('../database/models');
 const { Association } = require('sequelize');
-const productosController = {
+const indexController = {
     index: function (req, res) {
         let filtrado= {
             include: [
@@ -23,9 +22,8 @@ const productosController = {
         );
         
 
-      /*  return res.render('index', { lista: datos.productos })*/
     },
     
 };
 
-module.exports = productosController;
+module.exports = indexController;

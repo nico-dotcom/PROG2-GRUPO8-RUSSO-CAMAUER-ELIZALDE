@@ -3,23 +3,9 @@ const op = db.Sequelize.Op;
 const { validationResult } = require('express-validator');
 
 const productosController = {
-    index: function (req, res) {
-        db.Producto.findAll({
-            include: [
-                { association: "Usuario" },
-                { association: "Comentario" }
-            ]
-        })
-            .then(function (resultado) {
-                return res.render("index", { lista: resultado });
-            })
-            .catch(function (errores) {
-                return console.log(errores);
-            });
-    },
 
     product: function (req, res) {
-        // return res.render('product', {lista: datos} )
+        return res.redirect('/' )
     },
 
     comment: function (req, res) {
@@ -257,7 +243,6 @@ const productosController = {
                         old: req.body,
                         producto: resultado
                     });
-                    // return res.send({ producto: resultado })
 
                 }).catch(function (errores) {
                     return console.log(errores);;

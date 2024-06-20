@@ -22,16 +22,22 @@
             <div class="data-container col-6">
                 <div class="d-flex align-items-center ">
                     <h1 class="main-title"><%= lista.nombre_usuario%>
+                        <% if (locals.user != undefined ) { %>
+
+                        <% if (locals.user.id_usuario == lista.id_usuario ) { %>
                         <a href="/user/profile-edit/<%= lista.id_usuario %>">
                             <i class="fas fa-cog"></i>
                         </a>
+                        <% }  %>
+                        <% }  %>
+
                     </h1>
                     <a class="btn mt-3 ml-4" href="">SEGUIR</a>
                 </div>
                 <div>
                     <ul class="">
                         <li><%= lista.email %> </li>
-                        <li><%= lista.Producto.length %></li>
+                        <li><%= lista.Producto.length %> productos</li>
                         <li>200 seguidores</li>
                         <li><%= lista.Comentario.length %></li>
                     </ul>
@@ -52,7 +58,7 @@
         <% for (let i = 0; i < lista.Producto.length; i++) { %>
             <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
-                    <a href="/id/<%= lista.Producto[i].id_producto %>">
+                    <a href="/product/id/<%= lista.Producto[i].id_producto %>">
                         <figure class="product-box_image">
                             <img src= <%= lista.Producto[i].imagen_producto %> alt="cafetera moulinex">
                         </figure>

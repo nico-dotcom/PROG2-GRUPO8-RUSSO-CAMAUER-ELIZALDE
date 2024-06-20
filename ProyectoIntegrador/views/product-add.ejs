@@ -21,13 +21,14 @@
 
             <!-- Show the "ultimos" products -->
             <form class='formulario' action="/product/add" method="POST">
-               
+                <label class= 'LabelForm' >Ruta del producto</label>
                 <input class= 'CampoForm' type="text" id="ImagenProductoAgregado" accept=".jpg, .jpeg, .png" name="imagen_producto" >
                 <% if (locals.errors && errors.imagen_producto) { %>
                     <p class="error"><%= errors.imagen_producto.msg %></p>
                 <% } %>
-               
-                <input class= 'CampoForm' type="text" id="NombreDelProductoAgregado" value="" placeholder="Nombre del Producto" name="nombre_producto">
+
+                <label class= 'LabelForm' >Nombre del producto</label>
+                <input class= 'CampoForm' type="text" id="NombreDelProductoAgregado" value="" name="nombre_producto">
                 <% if (locals.errors && errors.nombre_producto) { %>
                     <p class="error"><%= errors.nombre_producto.msg %></p>
                 <% } %>

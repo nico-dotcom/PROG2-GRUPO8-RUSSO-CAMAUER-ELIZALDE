@@ -21,22 +21,6 @@ let validations= [
     .bail(),
 ];
 
-let validationsUpdate= [
-    body('imagen_producto')
-    .notEmpty()
-    .withMessage('Debes ingresar una imágen del producto')
-    .bail(),
-
-    body('nombre_producto')
-    .notEmpty()
-    .withMessage('Debes ingresar el nombre del producto')
-    .bail(),
-
-    body('descripcion')
-    .notEmpty()
-    .withMessage('Debes ingresar una descripción del producto')
-    .bail(),
-];
 
 let validationComment= [
     body('comentario')
@@ -50,7 +34,6 @@ router.get('/', productosController.product);
 
 router.post('/', validationComment, productosController.comment);
 
-
 /* método GET para mostrar la vista del form */
 router.get('/add', productosController.showFormAdd);
 
@@ -60,8 +43,6 @@ router.post('/add', validations, productosController.store);
 router.get('/edit/:id', productosController.showFormUpdate);
 
 router.post("/update", validations, productosController.update);
-
-router.get('/info', productosController.product);
 
 router.get('/search', productosController.search);
 

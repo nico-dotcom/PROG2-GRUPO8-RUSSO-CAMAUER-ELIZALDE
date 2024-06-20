@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+const db = require("../ProyectoIntegrador/database/models");
 
 
 var indexRouter = require('./routes/index');
@@ -29,7 +30,6 @@ app.use(session({
   saveUninitialized: true 
 })); 
 
-/* la config de session ---> locals */
 
 app.use(function(req, res, next) {
   if (req.session.user != undefined) {
@@ -42,9 +42,9 @@ app.use(function(req, res, next) {
 app.use(function(req, res, next) {
   
   if (req.cookies.userId != undefined && req.session.user == undefined) {
-    let idUsuario = req.cookies.userId; /*  6 */
+    let idUsuario = req.cookies.userId; 
 
-    db.User.findByPk(idUsuario)
+    db.Usuario.findByPk(idUsuario)
     .then((result) => {
       req.session.user = result;
       res.locals.user = result;
@@ -52,7 +52,6 @@ app.use(function(req, res, next) {
     }).catch((err) => {
       return console.log(err);
     });
-    /* buscar el id en la db */
   } else {
     return next();
   }
