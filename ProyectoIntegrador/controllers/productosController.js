@@ -22,10 +22,10 @@ const productosController = {
         // return res.render('product', {lista: datos} )
     },
 
-    comment: function(req, res){
+    comment: function (req, res) {
         let errors = validationResult(req);
 
-        let infoComment= req.body;
+        let infoComment = req.body;
         const userId = res.locals.user.id_usuario;
         const prodId = infoComment.id;
 
@@ -34,47 +34,48 @@ const productosController = {
                 id_usuario: userId,
                 id_producto: prodId,
                 comentario: infoComment.comentario,
-                
+
             };
-            
+
             db.Comentario.create(nuevoComment)
-            .then((result) => {
-                return res.redirect("/product/id/" + infoComment.id);
-            })
-            .catch((error) => {
-                return console.log(error);
-            });
- 
-            
+                .then((result) => {
+                    return res.redirect("/product/id/" + infoComment.id);
+                })
+                .catch((error) => {
+                    return console.log(error);
+                });
+
+
         } else {
             db.Producto.findByPk(prodId, {
                 include: [
                     { association: "Usuario" },
-                    { association: "Comentario" ,
+                    {
+                        association: "Comentario",
                         include: [
                             { association: "Usuario" },
                             { association: 'Producto' }
                         ],
-                        
+
                         order: [['created_at', 'DESC']]
                     }
                 ]
             })
-            .then(function(result){
-                return res.render('product', {
-                    errors: errors.mapped(),
-                    old: req.body,
-                    lista: result,
-                }
-                );
-            })
-            .catch((error) => {
-                return console.log(error);
-            });
-      
+                .then(function (result) {
+                    return res.render('product', {
+                        errors: errors.mapped(),
+                        old: req.body,
+                        lista: result,
+                    }
+                    );
+                })
+                .catch((error) => {
+                    return console.log(error);
+                });
+
         }
 
-   
+
     },
 
     showFormAdd: function (req, res) {
@@ -114,10 +115,10 @@ const productosController = {
     },
 
     productInfo: function (req, res) {
-        let session= req.session.user
+        let session = req.session.user
         let id = req.params.id;
 
-        db.Producto.findByPk(id,{
+        db.Producto.findByPk(id, {
             include: [
                 { association: "Usuario" },
                 {
@@ -130,7 +131,7 @@ const productosController = {
             ]
         })
             .then(function (resultado) {
-                return res.render('product', { lista: resultado ,session:session});
+                return res.render('product', { lista: resultado, session: session });
             })
             .catch(function (errores) {
                 return console.log(errores);
@@ -165,46 +166,107 @@ const productosController = {
             .catch(function (error) {
                 return console.log(error);
             });
-    
+
     },
-delete:function (req,res) {
-    if (res.locals.user == undefined){
-        return res.send("No podes borrar este producto porque no estas logueado")
-    } else{
+    delete: function (req, res) {
+        if (res.locals.user == undefined) {
+            return res.send("No podes borrar este producto porque no estas logueado")
+        } else {
 
-    let id_usuarioForm = req.body.id_usuario;  
-    let id_usuarioSession = res.locals.user.id_usuario;
+            let id_usuarioForm = req.body.id_usuario;
+            let id_usuarioSession = res.locals.user.id_usuario;
 
 
-    if (id_usuarioForm == id_usuarioSession ) {
-        let idEliminar= req.body.id_producto;
-        
-        const filtro = {
-            where: { id_producto: idEliminar }
+            if (id_usuarioForm == id_usuarioSession) {
+                let idEliminar = req.body.id_producto;
+
+                const filtro = {
+                    where: { id_producto: idEliminar }
+                };
+
+                db.Comentario.destroy(filtro)
+                    .then((result) => {
+
+                        db.Producto.destroy(filtro)
+                            .then((result) => {
+                                return res.redirect("/");
+
+                            }).catch((error) => {
+                                return console.log(error);
+                            });
+
+                    }).catch((error) => {
+                        return console.log(error);
+                    });
+
+            } else {
+                return res.send('No se puede eliminar si no es tu producto')
+            }
+
+
+        }
+    },
+    showFormUpdate: function (req, res) {
+        if (req.session.user != undefined) {
+            let id = req.params.id;
+            const userId = res.locals.user.id_usuario;
+
+            db.Producto.findByPk(id)
+                .then((result) => {
+                    if (result.id_usuario != userId) {
+                        return res.send("Tu usuario no creo este producto por lo tanto no podes editarlo.")
+                    } else {
+                        return res.render("product-edit", { producto: result });
+                    }
+                }).catch((err) => {
+                    return console.log(err);
+                });
+        } else {
+            return res.redirect('/user/login');
+        }
+
+    }, update: function (req, res) {
+        let form = req.body;
+        let id = form.id
+        let errorrs = validationResult(req);
+
+        if (errorrs.isEmpty()) {
+            let nuevoProducto = {
+                imagen_producto: '/images/products/' + form.imagen_producto,
+                nombre_producto: form.nombre_producto,
+                descripcion: form.descripcion,
+            }
+
+            let filtro = {
+                where: [{ id_producto: form.id }]
+            };
+
+            db.Producto.update(nuevoProducto, filtro)
+                .then((result) => {
+                    return res.redirect("/");
+                }).catch((err) => {
+                    return console.log(err);
+                });
+
+        } else {
+
+            db.Producto.findByPk(id)
+                .then(function (resultado) {
+                    return res.render('product-edit.ejs', {
+                        errors: errorrs.mapped(),
+                        old: req.body,
+                        producto: resultado
+                    });
+                    // return res.send({ producto: resultado })
+
+                }).catch(function (errores) {
+                    return console.log(errores);;
+                })
+
+
+
         };
-
-        db.Comentario.destroy(filtro)
-        .then((result) => {
-
-            db.Producto.destroy(filtro)
-            .then((result) => {
-              return res.redirect("/");
-
-            }).catch((error) => {
-              return console.log(error);
-            });
-
-        }).catch((error) => {
-          return console.log(error);
-        });
-
-    }else{
-        return res.send('No se puede eliminar si no es tu producto')
     }
-  
-
-  }
-}
 };
 
 module.exports = productosController;

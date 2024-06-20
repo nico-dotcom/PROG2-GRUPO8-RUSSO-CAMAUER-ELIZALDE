@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const productosController = require('../controllers/productosController');
 const { body } = require('express-validator');
+
+
 let validations= [
     body('imagen_producto')
     .notEmpty()
@@ -17,9 +19,23 @@ let validations= [
     .notEmpty()
     .withMessage('Debes ingresar una descripción del producto')
     .bail(),
+];
 
-  
+let validationsUpdate= [
+    body('imagen_producto')
+    .notEmpty()
+    .withMessage('Debes ingresar una imágen del producto')
+    .bail(),
 
+    body('nombre_producto')
+    .notEmpty()
+    .withMessage('Debes ingresar el nombre del producto')
+    .bail(),
+
+    body('descripcion')
+    .notEmpty()
+    .withMessage('Debes ingresar una descripción del producto')
+    .bail(),
 ];
 
 let validationComment= [
@@ -40,6 +56,10 @@ router.get('/add', productosController.showFormAdd);
 
 /* método POST para procesar la infor del form */
 router.post('/add', validations, productosController.store);
+
+router.get('/edit/:id', productosController.showFormUpdate);
+
+router.post("/update", validations, productosController.update);
 
 router.get('/info', productosController.product);
 
