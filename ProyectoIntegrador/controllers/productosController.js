@@ -22,6 +22,61 @@ const productosController = {
         // return res.render('product', {lista: datos} )
     },
 
+    comment: function(req, res){
+        let errors = validationResult(req);
+
+        let infoComment= req.body;
+        const userId = res.locals.user.id_usuario;
+        const prodId = infoComment.id;
+
+        if (errors.isEmpty()) {
+            let nuevoComment = {
+                id_usuario: userId,
+                id_producto: prodId,
+                comentario: infoComment.comentario,
+                
+            };
+            
+            db.Comentario.create(nuevoComment)
+            .then((result) => {
+                return res.redirect("/product/id/" + infoComment.id);
+            })
+            .catch((error) => {
+                return console.log(error);
+            });
+ 
+            
+        } else {
+            db.Producto.findByPk(prodId, {
+                include: [
+                    { association: "Usuario" },
+                    { association: "Comentario" ,
+                        include: [
+                            { association: "Usuario" },
+                            { association: 'Producto' }
+                        ],
+                        
+                        order: [['created_at', 'DESC']]
+                    }
+                ]
+            })
+            .then(function(result){
+                return res.render('product', {
+                    errors: errors.mapped(),
+                    old: req.body,
+                    lista: result,
+                }
+                );
+            })
+            .catch((error) => {
+                return console.log(error);
+            });
+      
+        }
+
+   
+    },
+
     showFormAdd: function (req, res) {
         if (req.session.user != undefined) {
             return res.render("product-add");

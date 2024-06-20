@@ -42,8 +42,8 @@
                                 <img src= <%= lista.Comentario[i].Usuario.foto %> alt="">
                                 <div class="data">
                                     <p class="user">                  
-                                    <strong> <a href="profile.html"></a> <%= lista.Comentario[i].Usuario.email %></strong> <br>
-                                    <strong> <a href="profile.html"></a> <%= lista.Comentario[i].comentario %></strong>
+                                    <strong> <a href="/user/profile/id/<%=lista.Comentario[i].id_usuario %>"><%= lista.Comentario[i].Usuario.nombre_usuario %></a> </strong> <br>
+                                    <strong> <a href="profile.html"> <%= lista.Comentario[i].comentario %></a></strong>
                                     </p>
                                 </div>
                             </article>
@@ -51,10 +51,18 @@
                         <%} %>
                 </section>
 
-                    <form class="form" action="/" method="get">
-                        <input class="form-input" type="text" value="" placeholder="Agregar comentario">
+                <% if (locals.user != undefined) { %>
+                    <form class="form" action="/product" method="POST">
+                        <input type="hidden" name="id" value="<%= lista.id_producto %>">
+                        <input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
                         <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                        <% if (locals.errors && errors.comentario) { %>
+                            <p class="error"><%= errors.comentario.msg %></p>
+                        <% } %>
                     </form>
+                 <% } else { %>
+                    <p class="error">Debes estar logueado para comentar</p>
+                <% } %>
                     <hr>
                 </div>
             </div>
