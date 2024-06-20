@@ -157,7 +157,7 @@ seguridad y confort.", DEFAULT, DEFAULT, DEFAULT);
     FOREIGN KEY(id_producto) REFERENCES productos(id_producto)
  );
  
- --Insert comentarios
+
  INSERT INTO comentarios (id_comentario, id_usuario, id_producto,
  comentario, created_at, updated_at, deleted_at)
  VALUES (DEFAULT, 2, 1, "El Toyota Corolla es extremadamente fiable
