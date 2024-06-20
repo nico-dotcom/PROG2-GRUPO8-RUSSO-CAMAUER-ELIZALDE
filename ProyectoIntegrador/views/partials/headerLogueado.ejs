@@ -29,12 +29,13 @@
 		<nav class="main-navbar">
 			<ul class="left-navbar">
 				<li><a href="/">Todos los productos</a></li>
-				<li><a href="/product/add">Cargar productos</a></li>
+				<li><a href="/product/add">Agregar producto</a></li>
 			</ul>
-
+			
 			<ul class="right-navbar">
+				<p>¡Hola <%= locals.user.nombre_usuario %> !</p>
 				<li><a href="/user/profile/id/<%= locals.user.id_usuario %>">
-					<%= locals.user.nombre_usuario %>
+					Mi perfil
 				</a>
 				</li>
 				<li>

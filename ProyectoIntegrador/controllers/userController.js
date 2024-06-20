@@ -118,38 +118,32 @@ const userController = {
         res.render('register')
     },
 
-    loginUser: (req, res)=>{
+    loginUser: (req, res) => {
+        let errors = validationResult(req);
         let form = req.body;
-
         let filtro = {
-            where: [{email: form.email}]
+            where: [{ email: form.email }]
         };
 
+        if (errors.isEmpty()) {
+
         db.Usuario.findOne(filtro)
-        .then((result) => {
+            .then((result) => {
+                    req.session.user = result;
 
-            if (result == null) return res.send("No existe el mail " +  form.email)
-            console.log(result);
+                    if (form.rememberme != undefined) {
+                        res.cookie("userId", result.id_usuario, { maxAge: 1000 * 60 * 15 });
+                    }
 
-            let check = bcrypt.compareSync(form.password, result.contrasenas);
+                    return res.redirect("/");
+                })
 
-            if (check) {
-                req.session.user = result;
-
-                if (form.rememberme != undefined) {
-                    res.cookie("userId", result.id_usuario, {maxAge: 1000 * 60 * 15});
-                }
-                return res.redirect("/");
-            } else {
-                return res.send("La contraseña es incorrecta")
-            }
-            
-           
-
-        }).catch((err) => {
-            return console.log(err);
-        });
-
+            .catch((err) => {
+                return console.log(err);
+            });
+        } else {
+            return res.render('login', { errors: errors.mapped(), old: req.body })
+        }
 
     },
     store: function (req, res) {

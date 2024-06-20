@@ -54,6 +54,46 @@ let validationsProfileUpdate = [
 
 ];
 
+let validationLogin = [
+    body('email')
+        .notEmpty().withMessage('Debe ingresar un mail').bail()
+        .isEmail().withMessage('Debe ingresar un mail valido')
+        .custom(function (value, { req }) {
+            return db.Usuario.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+                .then(function (user) {
+                    if (!user) {
+                        throw new Error('El mail ingresado no existe')
+                    }
+                })
+        }),
+
+    body('password')
+        .notEmpty().withMessage('Debe ingresar una contraseña').bail()
+        .isLength({ min: 4 }).withMessage('La contraseña debe ser mas larga')
+        .custom(function (value, { req }) {
+            return db.Usuario.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+                .then(function (user) {
+
+                    if (user == null) {
+                        throw new Error('Ingrese un usuario valido')
+                    } else {
+                        let check = bcrypt.compareSync(req.body.password, user.contrasenas);
+                        if (!check) {
+                            throw new Error('La contraseña es incorrecta')
+                        }
+                    }
+                })
+        }),
+];
+
 router.get('/profile/id/:id', userController.profile);
 
 router.get('/profile-edit/:id', userController.profileEdit);
@@ -62,7 +102,7 @@ router.post('/profile/update', validationsProfileUpdate, userController.profileU
 
 router.get('/login', userController.login);
 
-router.post('/login', userController.loginUser);
+router.post('/login', validationLogin, userController.loginUser);
 
 router.post('/logout',  userController.logout);
 
